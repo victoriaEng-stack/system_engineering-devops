@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-# This script displays the content of the current directory (part after first dash)
+# This script is displaying "Best School" 10 times but says "Hi" on the 9th iteration
 
-for file in *
+i=1
+while [ $i -le 10 ]
 do
-    if [[ -f "$file" && ! "$file" =\~ ^\. ]]
+    if [ $i -eq 9 ]
     then
-        echo "${file#*-}"
+        echo "Hi"
+    else
+        echo "Best School"
     fi
+    ((i++))
 done
